@@ -1,0 +1,87 @@
+import { Meta, Title, Subtitle } from "@storybook/blocks";
+
+<Meta title="Guias/01 - Como instalar e usar" />
+
+<Title>Como instalar e usar os packages</Title>
+
+<Subtitle>Next.js, Vite (Lovable/shadcn) e Expo.</Subtitle>
+
+## Web (Next.js / Vite)
+
+Instale:
+
+```bash
+npm i @chavesete/tokens @chavesete/tailwind-preset @chavesete/ui
+```
+
+### 1) Tailwind
+
+No `tailwind.config`:
+
+```ts
+import { c7WebPreset } from "@chavesete/tailwind-preset";
+
+export default {
+  presets: [c7WebPreset],
+  content: ["./src/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"]
+};
+```
+
+### 2) Tokens (CSS)
+
+No CSS global do app:
+
+```css
+@import "@chavesete/tokens/styles.css";
+```
+
+### 3) Componentes
+
+```tsx
+import { Button, Card, IconHome } from "@chavesete/ui";
+
+export function Example() {
+  return (
+    <Card className="p-4 flex items-center gap-2">
+      <IconHome />
+      <Button>Continuar</Button>
+    </Card>
+  );
+}
+```
+
+## Mobile (Expo + NativeWind)
+
+Instale:
+
+```bash
+npm i @chavesete/ui-native @chavesete/tokens @chavesete/tailwind-preset
+```
+
+No `tailwind.config`:
+
+```js
+const { c7NativePreset } = require("@chavesete/tailwind-preset");
+
+module.exports = {
+  presets: [require("nativewind/preset"), c7NativePreset],
+  content: ["./src/**/*.tsx"]
+};
+```
+
+Uso:
+
+```tsx
+import { Button, Card, IconHome } from "@chavesete/ui-native";
+
+export function Example() {
+  return (
+    <Card className="p-4">
+      <Button className="flex-row items-center gap-2">
+        <IconHome />
+        Home
+      </Button>
+    </Card>
+  );
+}
+```

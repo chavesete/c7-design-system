@@ -1,0 +1,34 @@
+import { Meta, Title, Subtitle } from "@storybook/blocks";
+
+<Meta title="Fundações/11 - Tipografia" />
+
+<Title>Tipografia</Title>
+
+<Subtitle>Hierarquia, pesos e font-family padrão.</Subtitle>
+
+## Font family
+
+O Storybook e os exemplos web usam:
+
+- Metropolis (fallback: Inter, system-ui)
+
+## Exemplos
+
+<div className="rounded-lg border border-border bg-card p-6">
+  <div className="text-4xl font-bold tracking-tight">Título 1</div>
+  <div className="mt-2 text-2xl font-semibold tracking-tight">Título 2</div>
+  <div className="mt-2 text-xl font-semibold">Título 3</div>
+  <div className="mt-4 text-base text-foreground">
+    Texto base para conteúdo e formulários. Use <span className="font-semibold">font-semibold</span> para
+    ênfase e <span className="text-muted-foreground">text-muted-foreground</span> para textos secundários.
+  </div>
+  <div className="mt-3 text-sm text-muted-foreground">
+    Texto auxiliar (labels, hints, metadados).
+  </div>
+</div>
+
+## Boas práticas
+
+- Priorize contraste: `text-foreground` em `bg-background`/`bg-card`
+- Use `text-muted-foreground` para textos secundários
+- Evite variações “soltas” de tamanho: prefira a escala do Tailwind

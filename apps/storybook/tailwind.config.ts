@@ -3,6 +3,9 @@ import type { Config } from "tailwindcss";
 
 export default {
   presets: [c7WebPreset as any],
-  content: ["./src/**/*.{ts,tsx}", "../../packages/ui/src/**/*.{ts,tsx}"],
+  content: [
+    "./src/**/*.{ts,tsx,mdx}",
+    "../../packages/ui/src/**/*.{ts,tsx}"
+  ],
   plugins: []
 } satisfies Config;

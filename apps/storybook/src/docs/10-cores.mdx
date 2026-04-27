@@ -1,0 +1,86 @@
+import { Meta, Title, Subtitle } from "@storybook/blocks";
+
+<Meta title="Fundações/10 - Cores" />
+
+<Title>Cores</Title>
+
+<Subtitle>Tokens em CSS variables e classes Tailwind do DS.</Subtitle>
+
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Background</div>
+    <div className="mt-3 h-14 rounded-md border border-border" style={{ backgroundColor: "hsl(var(--background))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--background</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Foreground</div>
+    <div className="mt-3 h-14 rounded-md border border-border" style={{ backgroundColor: "hsl(var(--foreground))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--foreground</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Card</div>
+    <div className="mt-3 h-14 rounded-md border border-border" style={{ backgroundColor: "hsl(var(--card))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--card</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Primary</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--primary))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--primary</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Secondary</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--secondary))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--secondary</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Accent</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--accent))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--accent</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Success</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--success))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--success</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Warning</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--warning))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--warning</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Destructive</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--destructive))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--destructive</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Border</div>
+    <div className="mt-3 h-14 rounded-md border border-border" style={{ backgroundColor: "hsl(var(--border))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--border</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Muted</div>
+    <div className="mt-3 h-14 rounded-md border border-border" style={{ backgroundColor: "hsl(var(--muted))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--muted</div>
+  </div>
+
+  <div className="rounded-lg border border-border bg-card p-4">
+    <div className="text-sm font-semibold">Alternative</div>
+    <div className="mt-3 h-14 rounded-md" style={{ backgroundColor: "hsl(var(--alternative))" }} />
+    <div className="mt-2 text-xs text-muted-foreground">--alternative</div>
+  </div>
+</div>
+
+## Onde ficam os tokens
+
+- Web (CSS variables): `@chavesete/tokens/styles.css`
+- Tailwind mapping: `@chavesete/tailwind-preset` (cores como `bg-primary`, `text-foreground`, `border-border`, etc.)

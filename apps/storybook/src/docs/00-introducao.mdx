@@ -1,0 +1,25 @@
+import { Meta, Title, Subtitle, Description } from "@storybook/blocks";
+
+<Meta title="Guias/00 - Introdução" />
+
+<Title>Design System Chave7</Title>
+
+<Subtitle>Como consumir os pacotes e como pensar a UI.</Subtitle>
+
+<Description>
+Este Storybook documenta os componentes e as fundações visuais do Design System (tokens, Tailwind
+preset, UI web e UI mobile).
+</Description>
+
+## Estrutura do monorepo
+
+- `packages/tokens`: tokens e variáveis CSS do tema (web) + tokens JS/TS (mobile)
+- `packages/tailwind-preset`: presets Tailwind (web e native)
+- `packages/ui`: componentes web (React + Tailwind)
+- `packages/ui-native`: componentes mobile (React Native + NativeWind)
+- `apps/storybook`: documentação (este Storybook)
+
+## Temas (light/dark)
+
+No web, o tema é definido via CSS variables (HSL) e o modo escuro é ativado aplicando a classe `dark`
+no elemento raiz (ex.: `html` ou `body`).
