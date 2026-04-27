@@ -1,0 +1,22 @@
+{
+  "name": "c7-design-system",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev:storybook": "pnpm --filter @chavesete/storybook dev"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "^0.74.0",
+    "react-native-svg": "^15.11.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.5.4"
+  }
+}
