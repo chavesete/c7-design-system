@@ -1,4 +1,4 @@
-import { c7WebPreset } from "../../packages/tailwind-preset/src";
+import { c7WebPreset } from "@chavesete/tailwind-preset";
 import type { Config } from "tailwindcss";
 
 export default {

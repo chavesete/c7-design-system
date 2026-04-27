@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "HOME=/tmp STORYBOOK_DISABLE_TELEMETRY=1 storybook dev -p 6006 --no-open",
-    "build": "HOME=/tmp STORYBOOK_DISABLE_TELEMETRY=1 storybook build -o storybook-static"
+    "build": "pnpm -r --filter @chavesete/tokens --filter @chavesete/tailwind-preset --filter @chavesete/ui build && HOME=/tmp STORYBOOK_DISABLE_TELEMETRY=1 storybook build -o storybook-static"
   },
   "dependencies": {
     "@chavesete/tokens": "workspace:*",
