@@ -12,8 +12,13 @@
   "dependencies": {
     "@chavesete/tokens": "workspace:*",
     "@chavesete/tailwind-preset": "workspace:*",
+    "@radix-ui/react-popover": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "lucide-react": "^0.460.0",
+    "react-day-picker": "^8.10.1",
     "tailwind-merge": "^2.6.0"
   },
   "exports": {
@@ -27,6 +32,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "tsup src/index.ts --format esm,cjs --dts --loader .svg=dataurl --loader .png=dataurl"
   }
 }
