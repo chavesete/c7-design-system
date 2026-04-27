@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Search, Mail } from "lucide-react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Mail, Search } from "lucide-react";
 
 import { Input } from "@chavesete/ui";
 
@@ -9,27 +9,27 @@ const meta: Meta<typeof Input> = {
   tags: ["autodocs"],
   args: {
     placeholder: "Digite algo...",
-    disabled: false,
+    disabled: false
   },
   argTypes: {
     type: {
       control: "select",
       options: ["text", "email", "number", "search", "url", "tel"],
-      description: "Tipo do input HTML",
+      description: "Tipo do input HTML"
     },
     placeholder: {
       control: "text",
-      description: "Texto de placeholder",
+      description: "Texto de placeholder"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita o input",
+      description: "Desabilita o input"
     },
     value: {
       control: "text",
-      description: "Valor controlado",
-    },
-  },
+      description: "Valor controlado"
+    }
+  }
 };
 
 export default meta;
@@ -40,29 +40,29 @@ export const Default: Story = {};
 
 export const WithValue: Story = {
   args: {
-    defaultValue: "Valor inicial",
-  },
+    defaultValue: "Valor inicial"
+  }
 };
 
 export const Email: Story = {
   args: {
     type: "email",
-    placeholder: "email@exemplo.com",
-  },
+    placeholder: "email@exemplo.com"
+  }
 };
 
 export const Number: Story = {
   args: {
     type: "number",
-    placeholder: "0",
-  },
+    placeholder: "0"
+  }
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    defaultValue: "Campo desabilitado",
-  },
+    defaultValue: "Campo desabilitado"
+  }
 };
 
 export const WithIcon: Story = {
@@ -74,7 +74,7 @@ export const WithIcon: Story = {
       />
       <Input {...args} className="pl-8" placeholder="Buscar..." />
     </div>
-  ),
+  )
 };
 
 export const WithTrailingIcon: Story = {
@@ -86,7 +86,7 @@ export const WithTrailingIcon: Story = {
         className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
       />
     </div>
-  ),
+  )
 };
 
 export const WithLabel: Story = {
@@ -100,7 +100,7 @@ export const WithLabel: Story = {
         Como aparece no documento oficial.
       </p>
     </div>
-  ),
+  )
 };
 
 export const WithError: Story = {
@@ -118,7 +118,7 @@ export const WithError: Story = {
       />
       <p className="text-xs text-destructive">E-mail inválido.</p>
     </div>
-  ),
+  )
 };
 
 export const Sizes: Story = {
@@ -128,5 +128,5 @@ export const Sizes: Story = {
       <Input placeholder="Padrão (h-9)" />
       <Input className="h-11 text-base" placeholder="Grande" />
     </div>
-  ),
+  )
 };

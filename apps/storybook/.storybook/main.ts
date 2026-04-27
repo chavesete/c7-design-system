@@ -7,14 +7,11 @@ import type { StorybookConfig } from "@storybook/react-vite";
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials"],
+  stories: ["../src/docs/**/*.mdx", "../src/stories/**/*.stories.@(ts|tsx)"],
+  addons: ["@storybook/addon-docs", "@storybook/addon-mcp"],
   framework: {
     name: "@storybook/react-vite",
     options: {}
-  },
-  docs: {
-    autodocs: "tag"
   },
   async viteFinal(baseConfig: UserConfig) {
     const rootDir = path.resolve(dirname, "..");

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Search, Plus, Trash2, ArrowRight } from "lucide-react";
 
 import { Button } from "@chavesete/ui";
@@ -9,28 +9,28 @@ const meta: Meta<typeof Button> = {
   tags: ["autodocs"],
   args: {
     children: "Botão",
-    disabled: false,
+    disabled: false
   },
   argTypes: {
     variant: {
       control: "select",
       options: ["default", "secondary", "destructive", "outline", "ghost", "link"],
-      description: "Estilo visual do botão",
+      description: "Estilo visual do botão"
     },
     size: {
       control: "select",
       options: ["default", "sm", "lg", "icon"],
-      description: "Tamanho do botão",
+      description: "Tamanho do botão"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita interações",
+      description: "Desabilita interações"
     },
     children: {
       control: "text",
-      description: "Conteúdo do botão",
-    },
-  },
+      description: "Conteúdo do botão"
+    }
+  }
 };
 
 export default meta;
@@ -38,43 +38,43 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
-  args: { variant: "default" },
+  args: { variant: "default" }
 };
 
 export const Secondary: Story = {
-  args: { variant: "secondary" },
+  args: { variant: "secondary" }
 };
 
 export const Destructive: Story = {
-  args: { variant: "destructive" },
+  args: { variant: "destructive" }
 };
 
 export const Outline: Story = {
-  args: { variant: "outline" },
+  args: { variant: "outline" }
 };
 
 export const Ghost: Story = {
-  args: { variant: "ghost" },
+  args: { variant: "ghost" }
 };
 
 export const Link: Story = {
-  args: { variant: "link" },
+  args: { variant: "link" }
 };
 
 export const Small: Story = {
-  args: { size: "sm", children: "Pequeno" },
+  args: { size: "sm", children: "Pequeno" }
 };
 
 export const Large: Story = {
-  args: { size: "lg", children: "Grande" },
+  args: { size: "lg", children: "Grande" }
 };
 
 export const Icon: Story = {
   args: {
     size: "icon",
     children: <Plus size={16} />,
-    "aria-label": "Adicionar",
-  },
+    "aria-label": "Adicionar"
+  }
 };
 
 export const WithLeadingIcon: Story = {
@@ -83,7 +83,7 @@ export const WithLeadingIcon: Story = {
       <Search size={16} />
       Buscar
     </Button>
-  ),
+  )
 };
 
 export const WithTrailingIcon: Story = {
@@ -92,11 +92,11 @@ export const WithTrailingIcon: Story = {
       Continuar
       <ArrowRight size={16} />
     </Button>
-  ),
+  )
 };
 
 export const Disabled: Story = {
-  args: { disabled: true },
+  args: { disabled: true }
 };
 
 export const AllVariants: Story = {
@@ -109,7 +109,7 @@ export const AllVariants: Story = {
       <Button variant="ghost">Ghost</Button>
       <Button variant="link">Link</Button>
     </div>
-  ),
+  )
 };
 
 export const AllSizes: Story = {
@@ -122,5 +122,5 @@ export const AllSizes: Story = {
         <Trash2 size={16} />
       </Button>
     </div>
-  ),
+  )
 };

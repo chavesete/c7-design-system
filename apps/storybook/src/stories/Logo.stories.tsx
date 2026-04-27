@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Logo } from "@chavesete/ui";
 
@@ -9,25 +9,25 @@ const meta: Meta<typeof Logo> = {
   args: {
     type: "full",
     size: "md",
-    variant: "default",
+    variant: "default"
   },
   argTypes: {
     type: {
       control: "select",
       options: ["full", "mark", "text"],
-      description: "Exibe o ícone, o nome ou ambos",
+      description: "Exibe o ícone, o nome ou ambos"
     },
     size: {
       control: "select",
       options: ["sm", "md", "lg"],
-      description: "Tamanho do logo",
+      description: "Tamanho do logo"
     },
     variant: {
       control: "select",
-      options: ["default", "primary", "white"],
-      description: "Variante de cor",
-    },
-  },
+      options: ["default", "white"],
+      description: "Variante de cor"
+    }
+  }
 };
 
 export default meta;
@@ -37,15 +37,11 @@ type Story = StoryObj<typeof Logo>;
 export const Default: Story = {};
 
 export const Mark: Story = {
-  args: { type: "mark" },
+  args: { type: "mark" }
 };
 
 export const TextOnly: Story = {
-  args: { type: "text" },
-};
-
-export const Primary: Story = {
-  args: { variant: "primary" },
+  args: { type: "text" }
 };
 
 export const White: Story = {
@@ -53,7 +49,7 @@ export const White: Story = {
     <div className="bg-primary p-6 rounded-lg inline-block">
       <Logo {...args} variant="white" />
     </div>
-  ),
+  )
 };
 
 export const AllSizes: Story = {
@@ -63,7 +59,7 @@ export const AllSizes: Story = {
       <Logo size="md" />
       <Logo size="lg" />
     </div>
-  ),
+  )
 };
 
 export const AllTypes: Story = {
@@ -73,7 +69,7 @@ export const AllTypes: Story = {
       <Logo type="mark" />
       <Logo type="text" />
     </div>
-  ),
+  )
 };
 
 export const DarkBackground: Story = {
@@ -83,5 +79,5 @@ export const DarkBackground: Story = {
       <Logo variant="white" size="md" />
       <Logo variant="white" size="lg" />
     </div>
-  ),
+  )
 };

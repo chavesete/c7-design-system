@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Slider } from "@chavesete/ui";
 
@@ -12,26 +12,26 @@ const meta: Meta<typeof Slider> = {
       <div className="w-80 py-4">
         <Story />
       </div>
-    ),
+    )
   ],
   argTypes: {
     min: {
       control: "number",
-      description: "Valor mínimo",
+      description: "Valor mínimo"
     },
     max: {
       control: "number",
-      description: "Valor máximo",
+      description: "Valor máximo"
     },
     step: {
       control: "number",
-      description: "Incremento por passo",
+      description: "Incremento por passo"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita o slider",
-    },
-  },
+      description: "Desabilita o slider"
+    }
+  }
 };
 
 export default meta;
@@ -43,8 +43,8 @@ export const Default: Story = {
     defaultValue: [50],
     min: 0,
     max: 100,
-    step: 1,
-  },
+    step: 1
+  }
 };
 
 export const Range: Story = {
@@ -52,15 +52,15 @@ export const Range: Story = {
     defaultValue: [20, 80],
     min: 0,
     max: 100,
-    step: 1,
-  },
+    step: 1
+  }
 };
 
 export const Disabled: Story = {
   args: {
     defaultValue: [40],
-    disabled: true,
-  },
+    disabled: true
+  }
 };
 
 export const WithSteps: Story = {
@@ -68,8 +68,8 @@ export const WithSteps: Story = {
     defaultValue: [0],
     min: 0,
     max: 100,
-    step: 25,
-  },
+    step: 25
+  }
 };
 
 export const ControlledSingle: Story = {
@@ -81,17 +81,10 @@ export const ControlledSingle: Story = {
           <span className="text-muted-foreground">Volume</span>
           <span className="font-medium">{value[0]}%</span>
         </div>
-        <Slider
-          {...args}
-          value={value}
-          onValueChange={setValue}
-          min={0}
-          max={100}
-          step={1}
-        />
+        <Slider {...args} value={value} onValueChange={setValue} />
       </div>
     );
-  },
+  }
 };
 
 export const ControlledRange: Story = {
@@ -119,7 +112,7 @@ export const ControlledRange: Story = {
         </div>
       </div>
     );
-  },
+  }
 };
 
 export const WithLabels: Story = {
@@ -133,13 +126,7 @@ export const WithLabels: Story = {
           <span className="text-muted-foreground">Satisfação</span>
           <span className="font-medium text-primary">{labels[index]}</span>
         </div>
-        <Slider
-          value={value}
-          onValueChange={setValue}
-          min={0}
-          max={100}
-          step={1}
-        />
+        <Slider value={value} onValueChange={setValue} min={0} max={100} step={1} />
         <div className="flex justify-between text-xs text-muted-foreground">
           {labels.map((l) => (
             <span key={l}>{l}</span>
@@ -147,5 +134,5 @@ export const WithLabels: Story = {
         </div>
       </div>
     );
-  },
+  }
 };

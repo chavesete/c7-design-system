@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Textarea } from "@chavesete/ui";
 
@@ -9,22 +9,22 @@ const meta: Meta<typeof Textarea> = {
   tags: ["autodocs"],
   args: {
     placeholder: "Digite aqui...",
-    disabled: false,
+    disabled: false
   },
   argTypes: {
     placeholder: {
       control: "text",
-      description: "Texto de placeholder",
+      description: "Texto de placeholder"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita o textarea",
+      description: "Desabilita o textarea"
     },
     rows: {
       control: "number",
-      description: "Número de linhas visíveis",
-    },
-  },
+      description: "Número de linhas visíveis"
+    }
+  }
 };
 
 export default meta;
@@ -36,22 +36,22 @@ export const Default: Story = {};
 export const WithValue: Story = {
   args: {
     defaultValue:
-      "Este é um conteúdo de exemplo para o textarea. Pode ter múltiplas linhas.",
-  },
+      "Este é um conteúdo de exemplo para o textarea. Pode ter múltiplas linhas."
+  }
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    defaultValue: "Campo desabilitado.",
-  },
+    defaultValue: "Campo desabilitado."
+  }
 };
 
 export const TallRows: Story = {
   args: {
     rows: 8,
-    placeholder: "Escreva um texto longo...",
-  },
+    placeholder: "Escreva um texto longo..."
+  }
 };
 
 export const WithLabel: Story = {
@@ -63,7 +63,7 @@ export const WithLabel: Story = {
       <Textarea id="bio" {...args} placeholder="Conte um pouco sobre você..." />
       <p className="text-xs text-muted-foreground">Máximo 200 caracteres.</p>
     </div>
-  ),
+  )
 };
 
 export const WithCharCounter: Story = {
@@ -90,7 +90,7 @@ export const WithCharCounter: Story = {
         </p>
       </div>
     );
-  },
+  }
 };
 
 export const WithError: Story = {
@@ -107,6 +107,5 @@ export const WithError: Story = {
       />
       <p className="text-xs text-destructive">Este campo é obrigatório.</p>
     </div>
-  ),
+  )
 };
-

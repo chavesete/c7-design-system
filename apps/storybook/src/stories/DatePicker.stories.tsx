@@ -1,6 +1,6 @@
 import * as React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { ptBR, enUS } from "date-fns/locale";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { enUS } from "date-fns/locale";
 
 import { DatePicker } from "@chavesete/ui";
 
@@ -10,22 +10,22 @@ const meta: Meta<typeof DatePicker> = {
   tags: ["autodocs"],
   args: {
     placeholder: "Selecione uma data",
-    disabled: false,
+    disabled: false
   },
   argTypes: {
     placeholder: {
       control: "text",
-      description: "Texto exibido quando nenhuma data está selecionada",
+      description: "Texto exibido quando nenhuma data está selecionada"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita o seletor de data",
+      description: "Desabilita o seletor de data"
     },
     dateFormat: {
       control: "text",
-      description: "Formato de exibição da data (padrão date-fns: PPP)",
-    },
-  },
+      description: "Formato de exibição da data (padrão date-fns: PPP)"
+    }
+  }
 };
 
 export default meta;
@@ -36,21 +36,21 @@ export const Default: Story = {
   render: (args) => {
     const [date, setDate] = React.useState<Date | undefined>();
     return <DatePicker {...args} value={date} onValueChange={setDate} />;
-  },
+  }
 };
 
 export const WithValue: Story = {
   render: (args) => {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
     return <DatePicker {...args} value={date} onValueChange={setDate} />;
-  },
+  }
 };
 
 export const Disabled: Story = {
   args: { disabled: true },
   render: (args) => {
     return <DatePicker {...args} value={new Date()} />;
-  },
+  }
 };
 
 export const EnglishLocale: Story = {
@@ -66,7 +66,7 @@ export const EnglishLocale: Story = {
         dateFormat="MMMM d, yyyy"
       />
     );
-  },
+  }
 };
 
 export const WithLabel: Story = {
@@ -88,11 +88,11 @@ export const WithLabel: Story = {
         </p>
       </div>
     );
-  },
+  }
 };
 
 export const CustomFormat: Story = {
-  render: (args) => {
+  render: () => {
     const [date, setDate] = React.useState<Date | undefined>(new Date());
     return (
       <div className="space-y-3">
@@ -102,13 +102,21 @@ export const CustomFormat: Story = {
         </div>
         <div className="space-y-1">
           <p className="text-xs text-muted-foreground">dd/MM/yyyy</p>
-          <DatePicker value={date} onValueChange={setDate} dateFormat="dd/MM/yyyy" />
+          <DatePicker
+            value={date}
+            onValueChange={setDate}
+            dateFormat="dd/MM/yyyy"
+          />
         </div>
         <div className="space-y-1">
           <p className="text-xs text-muted-foreground">MMMM yyyy</p>
-          <DatePicker value={date} onValueChange={setDate} dateFormat="MMMM yyyy" />
+          <DatePicker
+            value={date}
+            onValueChange={setDate}
+            dateFormat="MMMM yyyy"
+          />
         </div>
       </div>
     );
-  },
+  }
 };

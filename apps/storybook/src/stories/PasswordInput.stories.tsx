@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { PasswordInput } from "@chavesete/ui";
 
@@ -8,18 +8,18 @@ const meta: Meta<typeof PasswordInput> = {
   tags: ["autodocs"],
   args: {
     placeholder: "Senha",
-    disabled: false,
+    disabled: false
   },
   argTypes: {
     placeholder: {
       control: "text",
-      description: "Texto de placeholder",
+      description: "Texto de placeholder"
     },
     disabled: {
       control: "boolean",
-      description: "Desabilita o input",
-    },
-  },
+      description: "Desabilita o input"
+    }
+  }
 };
 
 export default meta;
@@ -30,15 +30,15 @@ export const Default: Story = {};
 
 export const WithValue: Story = {
   args: {
-    defaultValue: "minha-senha-secreta",
-  },
+    defaultValue: "minha-senha-secreta"
+  }
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-    defaultValue: "senha123",
-  },
+    defaultValue: "senha123"
+  }
 };
 
 export const WithLabel: Story = {
@@ -52,7 +52,7 @@ export const WithLabel: Story = {
         Use letras, números e símbolos.
       </p>
     </div>
-  ),
+  )
 };
 
 export const WithConfirmation: Story = {
@@ -71,7 +71,7 @@ export const WithConfirmation: Story = {
         <PasswordInput id="confirm-pwd" placeholder="Repita a senha" />
       </div>
     </div>
-  ),
+  )
 };
 
 export const WithError: Story = {
@@ -90,5 +90,5 @@ export const WithError: Story = {
         A senha deve ter no mínimo 8 caracteres.
       </p>
     </div>
-  ),
+  )
 };

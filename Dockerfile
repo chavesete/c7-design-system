@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -9,12 +9,7 @@ COPY packages ./packages
 COPY apps ./apps
 
 RUN pnpm install --frozen-lockfile
-RUN pnpm --filter @chavesete/storybook build
 
-FROM nginx:alpine
+EXPOSE 6006
 
-COPY --from=builder /app/apps/storybook/storybook-static /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["pnpm", "--filter", "@chavesete/storybook", "dev:docker"]

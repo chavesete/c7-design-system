@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
   Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
 } from "@chavesete/ui";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
   component: Card,
-  tags: ["autodocs"],
+  tags: ["autodocs"]
 };
 
 export default meta;
@@ -41,7 +41,7 @@ export const Default: Story = {
         <Button size="sm">Confirmar</Button>
       </CardFooter>
     </Card>
-  ),
+  )
 };
 
 export const Simple: Story = {
@@ -52,7 +52,7 @@ export const Simple: Story = {
         Sem sub-componentes, apenas padding direto.
       </p>
     </Card>
-  ),
+  )
 };
 
 export const WithStats: Story = {
@@ -61,7 +61,7 @@ export const WithStats: Story = {
       {[
         { label: "Usuários", value: "12.483", delta: "+8.2%" },
         { label: "Receita", value: "R$ 48.290", delta: "+14.1%" },
-        { label: "Conversão", value: "3,6%", delta: "-0.4%" },
+        { label: "Conversão", value: "3,6%", delta: "-0.4%" }
       ].map(({ label, value, delta }) => (
         <Card key={label} className="p-5">
           <p className="text-xs text-muted-foreground uppercase tracking-wide">
@@ -78,7 +78,7 @@ export const WithStats: Story = {
         </Card>
       ))}
     </div>
-  ),
+  )
 };
 
 export const WithForm: Story = {
@@ -86,9 +86,7 @@ export const WithForm: Story = {
     <Card className="w-[400px]">
       <CardHeader>
         <CardTitle>Criar conta</CardTitle>
-        <CardDescription>
-          Preencha os dados para criar sua conta.
-        </CardDescription>
+        <CardDescription>Preencha os dados para criar sua conta.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3">
         <div className="space-y-1">
@@ -110,5 +108,5 @@ export const WithForm: Story = {
         <Button className="w-full">Criar conta</Button>
       </CardFooter>
     </Card>
-  ),
+  )
 };
