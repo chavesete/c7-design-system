@@ -35,6 +35,8 @@ No CSS global do app:
 @import "@chavesete/tokens/styles.css";
 ```
 
+Importante: evite sobrescrever os tokens depois desse import (por exemplo, com outro `:root { --... }`, `@layer base` ou CSS global carregado posteriormente). Qualquer redefinição de variáveis CSS com o mesmo nome vai trocar os valores dos tokens no app.
+
 ### 3) Componentes
 
 ```tsx
