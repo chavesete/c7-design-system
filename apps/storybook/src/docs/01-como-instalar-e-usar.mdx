@@ -4,7 +4,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Como instalar e usar os packages
 
-Next.js, Vite (Lovable/shadcn) e Expo.
+Next.js, Vite (Lovable/shadcn) e Expo — com suporte a **Tailwind v3** e **Tailwind v4**.
 
 ## Web (Next.js / Vite)
 
@@ -14,43 +14,85 @@ Instale:
 npm i @chavesete/tokens @chavesete/tailwind-preset @chavesete/ui
 ```
 
-### 1) Tailwind
+---
 
-No `tailwind.config`:
+### Tailwind v3
+
+Configure o preset no `tailwind.config.ts`:
 
 ```ts
 import { c7WebPreset } from "@chavesete/tailwind-preset";
 
 export default {
   presets: [c7WebPreset],
-  content: ["./src/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"]
+  content: [
+    "./src/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}"
+  ]
 };
 ```
 
-### 2) Tokens (CSS)
-
-No CSS global do app:
+No CSS global do app, importe os tokens:
 
 ```css
 @import "@chavesete/tokens/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-Importante: evite sobrescrever os tokens depois desse import (por exemplo, com outro `:root { --... }`, `@layer base` ou CSS global carregado posteriormente). Qualquer redefinição de variáveis CSS com o mesmo nome vai trocar os valores dos tokens no app.
+---
 
-### 3) Componentes
+### Tailwind v4
+
+No Tailwind v4 não existe `tailwind.config` — tudo é configurado via CSS.
+Importe o preset CSS no seu arquivo global (ex.: `globals.css` ou `app.css`):
+
+```css
+@import "tailwindcss";
+@import "@chavesete/tokens/styles.css";
+@import "@chavesete/tailwind-preset/v4.css";
+```
+
+Nenhum arquivo de configuração JavaScript é necessário.
+
+---
+
+### Componentes (igual nas duas versões)
+
+As classes Tailwind geradas são idênticas no v3 e v4:
 
 ```tsx
-import { Button, Card, IconHome } from "@chavesete/ui";
+import { Button, Card, CardContent, CardHeader, CardTitle } from "@chavesete/ui";
 
 export function Example() {
   return (
-    <Card className="p-4 flex items-center gap-2">
-      <IconHome />
-      <Button>Continuar</Button>
+    <Card>
+      <CardHeader>
+        <CardTitle>Olá, mundo</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Continuar</Button>
+      </CardContent>
     </Card>
   );
 }
 ```
+
+Classes disponíveis: `bg-c7-primary`, `text-c7-foreground`, `border-c7-border`,
+`rounded-c7-card`, `text-c7-body`, `font-c7-sans`, `animate-c7-fade-in`, etc.
+
+---
+
+### Importante: não sobrescreva os tokens
+
+Evite redefinir as variáveis `--c7-*` depois do import dos tokens. Qualquer
+`:root { --c7-primary: ... }` carregado posteriormente vai sobrescrever os
+valores do design system.
+
+---
 
 ## Mobile (Expo + NativeWind)
 
@@ -60,7 +102,7 @@ Instale:
 npm i @chavesete/ui-native @chavesete/tokens @chavesete/tailwind-preset
 ```
 
-No `tailwind.config`:
+NativeWind ainda usa Tailwind v3. Configure o `tailwind.config.js`:
 
 ```js
 const { c7NativePreset } = require("@chavesete/tailwind-preset");
@@ -74,15 +116,12 @@ module.exports = {
 Uso:
 
 ```tsx
-import { Button, Card, IconHome } from "@chavesete/ui-native";
+import { Button, Card } from "@chavesete/ui-native";
 
 export function Example() {
   return (
     <Card className="p-4">
-      <Button className="flex-row items-center gap-2">
-        <IconHome />
-        Home
-      </Button>
+      <Button>Home</Button>
     </Card>
   );
 }

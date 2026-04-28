@@ -14,21 +14,33 @@ O Storybook e os exemplos web usam:
 
 ## Exemplos
 
-<div className="rounded-lg border border-border bg-card p-6">
+<div className="rounded-lg border border-c7-border bg-c7-card p-6">
   <div className="text-4xl font-bold tracking-tight">Título 1</div>
   <div className="mt-2 text-2xl font-semibold tracking-tight">Título 2</div>
   <div className="mt-2 text-xl font-semibold">Título 3</div>
-  <div className="mt-4 text-base text-foreground">
+  <div className="mt-4 text-base text-c7-foreground">
     Texto base para conteúdo e formulários. Use <span className="font-semibold">font-semibold</span> para
-    ênfase e <span className="text-muted-foreground">text-muted-foreground</span> para textos secundários.
+    ênfase e <span className="text-c7-muted-foreground">text-c7-muted-foreground</span> para textos secundários.
   </div>
-  <div className="mt-3 text-sm text-muted-foreground">
+  <div className="mt-3 text-sm text-c7-muted-foreground">
     Texto auxiliar (labels, hints, metadados).
   </div>
 </div>
 
+## Font sizes do design system
+
+Além da escala padrão do Tailwind, o preset expõe os seguintes tamanhos:
+
+| Classe | Tamanho | Line height |
+|---|---|---|
+| `text-c7-small` | 10px | 1.4 |
+| `text-c7-subtitle` | 12px | 1.4 |
+| `text-c7-body` | 14px | 1.5 |
+| `text-c7-body-lg` | 16px | 1.5 |
+| `text-c7-title` | 18px / bold | 1.3 |
+
 ## Boas práticas
 
-- Priorize contraste: `text-foreground` em `bg-background`/`bg-card`
-- Use `text-muted-foreground` para textos secundários
-- Evite variações “soltas” de tamanho: prefira a escala do Tailwind
+- Priorize contraste: `text-c7-foreground` em `bg-c7-background`/`bg-c7-card`
+- Use `text-c7-muted-foreground` para textos secundários
+- Evite variações "soltas" de tamanho: prefira a escala do Tailwind ou as classes `text-c7-*` acima

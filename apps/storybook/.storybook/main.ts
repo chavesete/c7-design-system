@@ -29,6 +29,10 @@ const config: StorybookConfig = {
             replacement: path.resolve(monorepoRoot, "packages/tokens/src")
           },
           {
+            find: "@chavesete/tailwind-preset/v4.css",
+            replacement: path.resolve(monorepoRoot, "packages/tailwind-preset/src/v4.css")
+          },
+          {
             find: "@chavesete/tailwind-preset",
             replacement: path.resolve(monorepoRoot, "packages/tailwind-preset/src")
           },

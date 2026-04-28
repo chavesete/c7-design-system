@@ -1,0 +1,143 @@
+/*
+ * @chavesete/tailwind-preset — Tailwind v4 CSS preset
+ *
+ * Usage in your global CSS:
+ *
+ *   @import "tailwindcss";
+ *   @import "@chavesete/tokens/styles.css";
+ *   @import "@chavesete/tailwind-preset/v4.css";
+ *
+ * The tokens file sets the --c7-* CSS variables.
+ * This file maps them to Tailwind v4 utilities via @theme inline.
+ */
+
+/* Class-based dark mode: add class="dark" to <html> or any ancestor */
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ─── Base ───────────────────────────────────────────── */
+  --color-c7-background:    hsl(var(--c7-background));
+  --color-c7-foreground:    hsl(var(--c7-foreground));
+  --color-c7-border:        hsl(var(--c7-border));
+  --color-c7-input:         hsl(var(--c7-input));
+  --color-c7-ring:          hsl(var(--c7-ring));
+
+  /* ─── Card ───────────────────────────────────────────── */
+  --color-c7-card:            hsl(var(--c7-card));
+  --color-c7-card-foreground: hsl(var(--c7-card-foreground));
+
+  /* ─── Popover ────────────────────────────────────────── */
+  --color-c7-popover:            hsl(var(--c7-popover));
+  --color-c7-popover-foreground: hsl(var(--c7-popover-foreground));
+
+  /* ─── Muted ──────────────────────────────────────────── */
+  --color-c7-muted:            hsl(var(--c7-muted));
+  --color-c7-muted-foreground: hsl(var(--c7-muted-foreground));
+
+  /* ─── Primary ────────────────────────────────────────── */
+  --color-c7-primary:            hsl(var(--c7-primary));
+  --color-c7-primary-foreground: hsl(var(--c7-primary-foreground));
+  --color-c7-primary-light-95:   hsl(var(--c7-primary-light-95));
+  --color-c7-primary-light-90:   hsl(var(--c7-primary-light-90));
+  --color-c7-primary-light-75:   hsl(var(--c7-primary-light-75));
+  --color-c7-primary-light-60:   hsl(var(--c7-primary-light-60));
+  --color-c7-primary-dark-25:    hsl(var(--c7-primary-dark-25));
+  --color-c7-primary-dark-10:    hsl(var(--c7-primary-dark-10));
+
+  /* ─── Secondary ──────────────────────────────────────── */
+  --color-c7-secondary:            hsl(var(--c7-secondary));
+  --color-c7-secondary-foreground: hsl(var(--c7-secondary-foreground));
+  --color-c7-secondary-light-95:   hsl(var(--c7-secondary-light-95));
+  --color-c7-secondary-light-90:   hsl(var(--c7-secondary-light-90));
+  --color-c7-secondary-light-75:   hsl(var(--c7-secondary-light-75));
+  --color-c7-secondary-light-60:   hsl(var(--c7-secondary-light-60));
+  --color-c7-secondary-dark-25:    hsl(var(--c7-secondary-dark-25));
+  --color-c7-secondary-dark-10:    hsl(var(--c7-secondary-dark-10));
+
+  /* ─── Accent ─────────────────────────────────────────── */
+  --color-c7-accent:            hsl(var(--c7-accent));
+  --color-c7-accent-foreground: hsl(var(--c7-accent-foreground));
+
+  /* ─── Destructive ────────────────────────────────────── */
+  --color-c7-destructive:            hsl(var(--c7-destructive));
+  --color-c7-destructive-foreground: hsl(var(--c7-destructive-foreground));
+
+  /* ─── Error ──────────────────────────────────────────── */
+  --color-c7-error:            hsl(var(--c7-error));
+  --color-c7-error-foreground: hsl(var(--c7-error-foreground));
+  --color-c7-error-light-90:   hsl(var(--c7-error-light-90));
+  --color-c7-error-light-75:   hsl(var(--c7-error-light-75));
+
+  /* ─── Warning ────────────────────────────────────────── */
+  --color-c7-warning:            hsl(var(--c7-warning));
+  --color-c7-warning-foreground: hsl(var(--c7-warning-foreground));
+  --color-c7-warning-light-90:   hsl(var(--c7-warning-light-90));
+  --color-c7-warning-strong:     hsl(var(--c7-warning-strong));
+
+  /* ─── Success ────────────────────────────────────────── */
+  --color-c7-success:            hsl(var(--c7-success));
+  --color-c7-success-foreground: hsl(var(--c7-success-foreground));
+  --color-c7-success-light-90:   hsl(var(--c7-success-light-90));
+
+  /* ─── Alternative ────────────────────────────────────── */
+  --color-c7-alternative:            hsl(var(--c7-alternative));
+  --color-c7-alternative-foreground: hsl(var(--c7-alternative-foreground));
+  --color-c7-alternative-light-60:   hsl(var(--c7-alternative-light-60));
+  --color-c7-alternative-light-75:   hsl(var(--c7-alternative-light-75));
+  --color-c7-alternative-light-90:   hsl(var(--c7-alternative-light-90));
+
+  /* ─── Sidebar ────────────────────────────────────────── */
+  --color-c7-sidebar:                    hsl(var(--c7-sidebar-background));
+  --color-c7-sidebar-foreground:         hsl(var(--c7-sidebar-foreground));
+  --color-c7-sidebar-primary:            hsl(var(--c7-sidebar-primary));
+  --color-c7-sidebar-primary-foreground: hsl(var(--c7-sidebar-primary-foreground));
+  --color-c7-sidebar-accent:             hsl(var(--c7-sidebar-accent));
+  --color-c7-sidebar-accent-foreground:  hsl(var(--c7-sidebar-accent-foreground));
+  --color-c7-sidebar-border:             hsl(var(--c7-sidebar-border));
+  --color-c7-sidebar-ring:               hsl(var(--c7-sidebar-ring));
+
+  /* ─── Border radius ──────────────────────────────────── */
+  --radius-c7-sm:    calc(var(--c7-radius) - 4px);
+  --radius-c7-md:    calc(var(--c7-radius) - 2px);
+  --radius-c7-lg:    var(--c7-radius);
+  --radius-c7-card:  var(--c7-radius-card);
+  --radius-c7-sheet: var(--c7-radius-sheet);
+
+  /* ─── Font sizes ─────────────────────────────────────── */
+  --text-c7-small:                10px;
+  --text-c7-small--line-height:   1.4;
+  --text-c7-subtitle:             12px;
+  --text-c7-subtitle--line-height: 1.4;
+  --text-c7-body:                 14px;
+  --text-c7-body--line-height:    1.5;
+  --text-c7-body-lg:              16px;
+  --text-c7-body-lg--line-height: 1.5;
+  --text-c7-title:                18px;
+  --text-c7-title--line-height:   1.3;
+  --text-c7-title--font-weight:   700;
+
+  /* ─── Font families ──────────────────────────────────── */
+  --font-c7-sans:    "Metropolis", "Inter", system-ui, sans-serif;
+  --font-c7-display: "Metropolis", "Inter", system-ui, sans-serif;
+  --font-c7-body:    "Metropolis", "Inter", system-ui, sans-serif;
+
+  /* ─── Animations ─────────────────────────────────────── */
+  --animate-c7-accordion-down: c7-accordion-down 0.2s ease-out;
+  --animate-c7-accordion-up:   c7-accordion-up 0.2s ease-out;
+  --animate-c7-fade-in:        c7-fade-in 0.2s ease-out;
+}
+
+@keyframes c7-accordion-down {
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes c7-accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
+}
+
+@keyframes c7-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
