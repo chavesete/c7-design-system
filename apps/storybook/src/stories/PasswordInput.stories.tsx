@@ -44,11 +44,11 @@ export const Disabled: Story = {
 export const WithLabel: Story = {
   render: (args) => (
     <div className="w-64 space-y-1.5">
-      <label className="text-sm font-medium text-foreground" htmlFor="pwd">
+      <label className="text-sm font-medium text-c7-foreground" htmlFor="pwd">
         Senha
       </label>
       <PasswordInput id="pwd" {...args} placeholder="Mínimo 8 caracteres" />
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-c7-muted-foreground">
         Use letras, números e símbolos.
       </p>
     </div>
@@ -84,9 +84,9 @@ export const WithError: Story = {
         id="pwd-err"
         {...args}
         defaultValue="123"
-        className="border-destructive focus-visible:ring-destructive"
+        className="border-c7-destructive focus-visible:ring-c7-destructive"
       />
-      <p className="text-xs text-destructive">
+      <p className="text-xs text-c7-destructive">
         A senha deve ter no mínimo 8 caracteres.
       </p>
     </div>

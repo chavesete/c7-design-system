@@ -78,7 +78,7 @@ export const ControlledSingle: Story = {
     return (
       <div className="space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">Volume</span>
+          <span className="text-c7-muted-foreground">Volume</span>
           <span className="font-medium">{value[0]}%</span>
         </div>
         <Slider {...args} value={value} onValueChange={setValue} />
@@ -93,7 +93,7 @@ export const ControlledRange: Story = {
     return (
       <div className="space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">Faixa de preço</span>
+          <span className="text-c7-muted-foreground">Faixa de preço</span>
           <span className="font-medium">
             R$ {range[0]} – R$ {range[1]}
           </span>
@@ -106,7 +106,7 @@ export const ControlledRange: Story = {
           max={500}
           step={10}
         />
-        <div className="flex justify-between text-xs text-muted-foreground">
+        <div className="flex justify-between text-xs text-c7-muted-foreground">
           <span>R$ 0</span>
           <span>R$ 500</span>
         </div>
@@ -123,11 +123,11 @@ export const WithLabels: Story = {
     return (
       <div className="space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">Satisfação</span>
-          <span className="font-medium text-primary">{labels[index]}</span>
+          <span className="text-c7-muted-foreground">Satisfação</span>
+          <span className="font-medium text-c7-primary">{labels[index]}</span>
         </div>
         <Slider value={value} onValueChange={setValue} min={0} max={100} step={1} />
-        <div className="flex justify-between text-xs text-muted-foreground">
+        <div className="flex justify-between text-xs text-c7-muted-foreground">
           {labels.map((l) => (
             <span key={l}>{l}</span>
           ))}

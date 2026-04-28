@@ -46,7 +46,7 @@ export const TextOnly: Story = {
 
 export const White: Story = {
   render: (args) => (
-    <div className="bg-primary p-6 rounded-lg inline-block">
+    <div className="bg-c7-primary p-6 rounded-lg inline-block">
       <Logo {...args} variant="white" />
     </div>
   )
@@ -74,7 +74,7 @@ export const AllTypes: Story = {
 
 export const DarkBackground: Story = {
   render: () => (
-    <div className="bg-foreground p-8 rounded-lg flex gap-8 items-center">
+    <div className="bg-c7-foreground p-8 rounded-lg flex gap-8 items-center">
       <Logo variant="white" size="sm" />
       <Logo variant="white" size="md" />
       <Logo variant="white" size="lg" />

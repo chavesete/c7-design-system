@@ -70,7 +70,7 @@ export const WithIcon: Story = {
     <div className="relative w-64">
       <Search
         size={15}
-        className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+        className="absolute left-2.5 top-1/2 -translate-y-1/2 text-c7-muted-foreground"
       />
       <Input {...args} className="pl-8" placeholder="Buscar..." />
     </div>
@@ -83,7 +83,7 @@ export const WithTrailingIcon: Story = {
       <Input {...args} className="pr-9" placeholder="E-mail" type="email" />
       <Mail
         size={15}
-        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-c7-muted-foreground"
       />
     </div>
   )
@@ -92,11 +92,11 @@ export const WithTrailingIcon: Story = {
 export const WithLabel: Story = {
   render: (args) => (
     <div className="w-64 space-y-1.5">
-      <label className="text-sm font-medium text-foreground" htmlFor="name">
+      <label className="text-sm font-medium text-c7-foreground" htmlFor="name">
         Nome completo
       </label>
       <Input id="name" {...args} placeholder="João da Silva" />
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-c7-muted-foreground">
         Como aparece no documento oficial.
       </p>
     </div>
@@ -106,7 +106,7 @@ export const WithLabel: Story = {
 export const WithError: Story = {
   render: (args) => (
     <div className="w-64 space-y-1.5">
-      <label className="text-sm font-medium text-foreground" htmlFor="email-err">
+      <label className="text-sm font-medium text-c7-foreground" htmlFor="email-err">
         E-mail
       </label>
       <Input
@@ -114,9 +114,9 @@ export const WithError: Story = {
         {...args}
         type="email"
         defaultValue="invalido@"
-        className="border-destructive focus-visible:ring-destructive"
+        className="border-c7-destructive focus-visible:ring-c7-destructive"
       />
-      <p className="text-xs text-destructive">E-mail inválido.</p>
+      <p className="text-xs text-c7-destructive">E-mail inválido.</p>
     </div>
   )
 };

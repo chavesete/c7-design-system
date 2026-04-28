@@ -19,7 +19,7 @@ export const PasswordInput = React.forwardRef<
       <input
         type={show ? "text" : "password"}
         className={cn(
-          "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pr-9 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-9 w-full rounded-c7-md border border-c7-input bg-transparent px-3 py-1 pr-9 text-sm shadow-sm transition-colors placeholder:text-c7-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-c7-ring disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         ref={ref}
@@ -30,7 +30,7 @@ export const PasswordInput = React.forwardRef<
         tabIndex={-1}
         aria-label={show ? "Ocultar senha" : "Mostrar senha"}
         onClick={() => setShow((v) => !v)}
-        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground disabled:pointer-events-none"
+        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-c7-muted-foreground transition-colors hover:text-c7-foreground disabled:pointer-events-none"
         disabled={props.disabled}
       >
         {show ? <EyeOff size={15} /> : <Eye size={15} />}

@@ -12,7 +12,7 @@ export function Card({ className, ...props }: CardProps) {
   const ViewAny = View as unknown as React.ComponentType<any>;
   return (
     <ViewAny
-      className={cn("rounded-xl border border-border bg-background", className)}
+      className={cn("rounded-xl border border-c7-border bg-c7-background", className)}
       {...props}
     />
   );

@@ -21,19 +21,19 @@ export type ButtonProps = PressableProps & {
 
 function getButtonClassName(variant: ButtonVariant) {
   if (variant === "secondary")
-    return "bg-secondary text-secondary-foreground";
+    return "bg-c7-secondary text-c7-secondary-foreground";
   if (variant === "destructive")
-    return "bg-destructive text-destructive-foreground";
-  if (variant === "outline") return "border border-border bg-background";
+    return "bg-c7-destructive text-c7-destructive-foreground";
+  if (variant === "outline") return "border border-c7-border bg-c7-background";
   if (variant === "ghost") return "bg-transparent";
-  return "bg-primary text-primary-foreground";
+  return "bg-c7-primary text-c7-primary-foreground";
 }
 
 function getTextClassName(variant: ButtonVariant) {
-  if (variant === "outline" || variant === "ghost") return "text-foreground";
-  if (variant === "secondary") return "text-secondary-foreground";
-  if (variant === "destructive") return "text-destructive-foreground";
-  return "text-primary-foreground";
+  if (variant === "outline" || variant === "ghost") return "text-c7-foreground";
+  if (variant === "secondary") return "text-c7-secondary-foreground";
+  if (variant === "destructive") return "text-c7-destructive-foreground";
+  return "text-c7-primary-foreground";
 }
 
 function getSizeClassName(size: ButtonSize) {

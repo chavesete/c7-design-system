@@ -83,7 +83,7 @@ export const WithLabel: Story = {
           dateFormat="dd/MM/yyyy"
           className="w-full"
         />
-        <p className="text-xs text-muted-foreground">
+        <p className="text-xs text-c7-muted-foreground">
           Conforme documento de identidade.
         </p>
       </div>
@@ -97,11 +97,11 @@ export const CustomFormat: Story = {
     return (
       <div className="space-y-3">
         <div className="space-y-1">
-          <p className="text-xs text-muted-foreground">Formato PPP (padrão)</p>
+          <p className="text-xs text-c7-muted-foreground">Formato PPP (padrão)</p>
           <DatePicker value={date} onValueChange={setDate} dateFormat="PPP" />
         </div>
         <div className="space-y-1">
-          <p className="text-xs text-muted-foreground">dd/MM/yyyy</p>
+          <p className="text-xs text-c7-muted-foreground">dd/MM/yyyy</p>
           <DatePicker
             value={date}
             onValueChange={setDate}
@@ -109,7 +109,7 @@ export const CustomFormat: Story = {
           />
         </div>
         <div className="space-y-1">
-          <p className="text-xs text-muted-foreground">MMMM yyyy</p>
+          <p className="text-xs text-c7-muted-foreground">MMMM yyyy</p>
           <DatePicker
             value={date}
             onValueChange={setDate}

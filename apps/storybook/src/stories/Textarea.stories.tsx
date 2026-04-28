@@ -57,11 +57,11 @@ export const TallRows: Story = {
 export const WithLabel: Story = {
   render: (args) => (
     <div className="w-80 space-y-1.5">
-      <label className="text-sm font-medium text-foreground" htmlFor="bio">
+      <label className="text-sm font-medium text-c7-foreground" htmlFor="bio">
         Biografia
       </label>
       <Textarea id="bio" {...args} placeholder="Conte um pouco sobre você..." />
-      <p className="text-xs text-muted-foreground">Máximo 200 caracteres.</p>
+      <p className="text-xs text-c7-muted-foreground">Máximo 200 caracteres.</p>
     </div>
   )
 };
@@ -83,7 +83,7 @@ export const WithCharCounter: Story = {
         />
         <p
           className={`text-xs text-right ${
-            value.length >= max ? "text-destructive" : "text-muted-foreground"
+            value.length >= max ? "text-c7-destructive" : "text-c7-muted-foreground"
           }`}
         >
           {value.length}/{max}
@@ -102,10 +102,10 @@ export const WithError: Story = {
       <Textarea
         id="ta-err"
         {...args}
-        className="border-destructive focus-visible:ring-destructive"
+        className="border-c7-destructive focus-visible:ring-c7-destructive"
         placeholder="Campo obrigatório"
       />
-      <p className="text-xs text-destructive">Este campo é obrigatório.</p>
+      <p className="text-xs text-c7-destructive">Este campo é obrigatório.</p>
     </div>
   )
 };

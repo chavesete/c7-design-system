@@ -30,7 +30,7 @@ export const Default: Story = {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-c7-muted-foreground">
           Conteúdo principal do card. Pode incluir qualquer elemento.
         </p>
       </CardContent>
@@ -48,7 +48,7 @@ export const Simple: Story = {
   render: () => (
     <Card className="w-[360px] p-6">
       <p className="text-sm font-semibold">Card simples</p>
-      <p className="text-sm text-muted-foreground mt-1">
+      <p className="text-sm text-c7-muted-foreground mt-1">
         Sem sub-componentes, apenas padding direto.
       </p>
     </Card>
@@ -64,13 +64,13 @@ export const WithStats: Story = {
         { label: "Conversão", value: "3,6%", delta: "-0.4%" }
       ].map(({ label, value, delta }) => (
         <Card key={label} className="p-5">
-          <p className="text-xs text-muted-foreground uppercase tracking-wide">
+          <p className="text-xs text-c7-muted-foreground uppercase tracking-wide">
             {label}
           </p>
           <p className="mt-1 text-2xl font-semibold">{value}</p>
           <p
             className={`mt-0.5 text-xs font-medium ${
-              delta.startsWith("+") ? "text-green-600" : "text-destructive"
+              delta.startsWith("+") ? "text-green-600" : "text-c7-destructive"
             }`}
           >
             {delta} vs mês anterior
@@ -92,14 +92,14 @@ export const WithForm: Story = {
         <div className="space-y-1">
           <label className="text-sm font-medium">Nome</label>
           <input
-            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="flex h-9 w-full rounded-md border border-c7-input bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-c7-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-c7-ring"
             placeholder="Seu nome"
           />
         </div>
         <div className="space-y-1">
           <label className="text-sm font-medium">E-mail</label>
           <input
-            className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="flex h-9 w-full rounded-md border border-c7-input bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-c7-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-c7-ring"
             placeholder="email@exemplo.com"
           />
         </div>
