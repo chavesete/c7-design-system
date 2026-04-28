@@ -10,7 +10,8 @@ COPY apps ./apps
 
 RUN pnpm install --frozen-lockfile --prod=false
 RUN pnpm -r --filter @chavesete/tokens --filter @chavesete/tailwind-preset --filter @chavesete/ui build
+RUN pnpm --filter @chavesete/storybook build
 
 EXPOSE 6006
 
-CMD ["pnpm", "--filter", "@chavesete/storybook", "dev:docker"]
+CMD ["pnpm", "--filter", "@chavesete/storybook", "start"]
